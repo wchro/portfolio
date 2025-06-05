@@ -1,0 +1,20 @@
+---
+import Cards from "./Cards.astro"
+---
+
+
+<section id="skills" class="bg-zinc-900 py-20 h-full">
+    <div class="flex flex-col container mx-auto px-4 justify-center items-center">
+        <div class="text-center">
+           <span class="text-xs font-bold border rounded-full border-zinc-700 py-0.5 px-2.5 text-zinc-400">Proyectos</span>
+           <h2 class="text-3xl md:text-4xl font-bold mb-4 mt-4">Proyectos Destacados</h2>
+           <p class="text-zinc-400 max-w-xl mx-auto">Proyectos recientes que reflejan mi enfoque técnico y capacidad para resolver problemas reales.</p>
+        </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+		<Cards type="large" title="KeySafe" description="Gestor de contraseñas que permite almacenar credenciales de forma segura. Implementa cifrado de extremo a extremo, autenticación robusta y una interfaz intuitiva para facilitar el acceso y la gestión de datos sensibles." tags={["Angular", "MongoDB", "Argon2", "Express"]} />
+		<Cards type="large" title="Taskify" description="Taskify es una aplicación de gestión de tareas simple y funcional, desarrollada con JavaScript, HTML y CSS. Permite agregar, marcar como completadas y eliminar tareas, con persistencia local usando localStorage. Su diseño es limpio y enfocado en la experiencia del usuario." tags={["JavaScript", "HTML", "CSS"]} />
+		<Cards type="large" title="PassGen" description="Una de mis primeras aplicaciones web. Permite crear contraseñas personalizadas y copiarlas fácilmente al portapapeles. Simple, útil y enfocado en la seguridad." tags={["JavaScript", "VanillaJS", "Security", "Beginner"]} />
+		<Cards type="large" title="orwi.dev" description="Desarrollado con Astro, pensado para presentar mi perfil profesional, proyectos y stack tecnológico de forma clara, rápida y accesible. Combina diseño limpio, buen SEO y rendimiento optimizado, reflejando tanto mi enfoque técnico como mi atención al detalle." tags={["Astro", "Portfolio", "API"]} />
+	</div>
+    </div>
+</section>
