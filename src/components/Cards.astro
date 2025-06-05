@@ -12,21 +12,30 @@ interface Props {
 
 }
 
-const { type = 'small', icon = '', title, description, tags = [], buttons } = Astro.props
+const { type = 'small', icon = '', title, description, tags = [], buttons = [] } = Astro.props
 ---
 
 <div class=`rounded-lg border text-card-foreground shadow-sm bg-zinc-800/50 border-zinc-700 w-full ${type === 'small' ? 'md:w-92 xl:w-102 2xl:w-108' : ''}`>
     <div class="p-6">
         {
-            icon && <div class="h-12 w-12 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-6">
-                        <Icons name={icon} />
-                    </div>
+            icon && 
+            <div class="h-12 w-12 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-6">
+                <Icons name={icon} />
+            </div>
         }
-                  <h3 class="text-xl font-bold mb-2">{title}</h3>
-                  <p class="text-zinc-400 mb-4">
-                    {description}
-                  </p>
-                  {tags.map((tag) => <Badges title={tag} />)}
-                  
+        <h3 class="text-xl font-bold mb-2">{title}</h3>
+        <p class="text-zinc-400 mb-4">
+        {description}
+        </p>
+        <div class="flex flex-wrap gap-2 mb-4">
+        {tags.map((tag) => <Badges title={tag} />)}
+        </div>
+        <div class="flex space-x-3">
+            {buttons.map((button) =>
+            button.type === "link" ?
+            <a class="text-sm font-semibold bg-emerald-500 hover:bg-emerald-600 px-4 py-2 rounded transition-colors" href="#">Ver demo</a>
+            : <a class="text-sm font-semibold border border-zinc-700 hover:bg-zinc-800 px-4 py-2 rounded transition-colors" href="#">GitHub</a>
+            )}
+        </div>
     </div>
 </div>
